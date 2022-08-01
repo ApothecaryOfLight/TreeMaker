@@ -62,8 +62,9 @@ function addNodeElements( inHTMLNode, inTextContent ) {
 }
 
 function setDraggablePositionOfChild( inDraggable, inParentPosition ) {
-	inDraggable.left = inParentPosition.x;
-	inDraggable.top = inParentPosition.y + 150;
+	const pos = get_position( document.getElementById("lens") );
+	inDraggable.left = inParentPosition.x + pos.x;
+	inDraggable.top = inParentPosition.y + 150 + pos.y;
 }
 
 function updateDraggablePosition( Index, PositionDiff ) {
