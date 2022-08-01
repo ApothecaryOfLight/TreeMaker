@@ -187,12 +187,7 @@ function make_viewport_draggable( viewport ) {
 		is_mouse_down = true;
 	});
 	viewport.addEventListener( 'mousemove', (click_event) => {
-		if( is_mouse_down ) {
-			const conatiner_offset = document.getElementById("tree_container").getBoundingClientRect();
-			const bounding_rect = viewport.getBoundingClientRect();
-			const bound_x = conatiner_offset.left - bounding_rect.left + 1;
-			const bound_y = conatiner_offset.y - bounding_rect.y + 1;
-			
+		if( is_mouse_down ) {			
 			const pos = get_position( viewport );
 			const move_x = Number(pos.x) + click_event.movementX;
 			const move_y = Number(pos.y) + click_event.movementY;
